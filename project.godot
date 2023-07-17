@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="ShaderFor2D"
+config/name="ShadersFor2D"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
