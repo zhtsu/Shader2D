@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1bstyytfbtuc"]
+
+[sub_resource type="Shader" id="Shader_c7ogs"]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float cutoff:hint_range(0.0, 1.0);
+uniform float width:hint_range(0.0, 1.0);
+uniform float height:hint_range(0.0, 1.0);
+uniform float speed:hint_range(0.0, 1.0);
+
+void fragment() {
+	float alpha = 1.0;
+	float wave_cutoff = cutoff - (sin((UV.x + TIME * speed) / width) - 1.0) * height;
+	
+	if (wave_cutoff > UV.y)
+	{
+		alpha = 0.0;
+	}
+	
+	COLOR = vec4(COLOR.rgb, alpha);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjhbc"]
+shader = SubResource("Shader_c7ogs")
+shader_parameter/cutoff = 0.427
+shader_parameter/width = 0.054
+shader_parameter/height = 0.057
+shader_parameter/speed = 0.416
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vjhbc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.670588, 1, 1)
