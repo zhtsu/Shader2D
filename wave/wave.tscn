@@ -4,10 +4,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjhbc"]
 shader = ExtResource("1_ilsw3")
-shader_parameter/cutoff = null
-shader_parameter/width = null
-shader_parameter/height = null
-shader_parameter/speed = null
+shader_parameter/cutoff = 0.427
+shader_parameter/width = 0.054
+shader_parameter/height = 0.057
+shader_parameter/speed = 0.416
 
 [node name="Control" type="Control"]
 layout_mode = 3
