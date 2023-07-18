@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyfwyhi07tcvv"]
 
-[ext_resource type="Shader" path="res://flashlight/flashlight.gdshader" id="1_m5p6m"]
-[ext_resource type="Script" path="res://flashlight/ColorRect.gd" id="2_ff35a"]
+[ext_resource type="Shader" path="res://shaders/flashlight/flashlight.gdshader" id="1_880n5"]
+[ext_resource type="Script" path="res://shaders/flashlight/ColorRect.gd" id="2_e7prs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ajtqy"]
-shader = ExtResource("1_m5p6m")
+shader = ExtResource("1_880n5")
 shader_parameter/open = true
 shader_parameter/radius = 200.0
 shader_parameter/mouse_pos = null
@@ -26,4 +26,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.556863, 0.298039, 1)
-script = ExtResource("2_ff35a")
+script = ExtResource("2_e7prs")

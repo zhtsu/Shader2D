@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6snvtk16b7tc"]
 
-[ext_resource type="Shader" path="res://wave/wave.gdshader" id="1_ilsw3"]
+[ext_resource type="Shader" path="res://shaders/wave/wave.gdshader" id="1_ilsw3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjhbc"]
 shader = ExtResource("1_ilsw3")
