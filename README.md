@@ -1,2 +1,2 @@
 # ShadersFor2D
-Shaders for 2D with GDScripts
+Shaders for 2D written using Godot
