@@ -24,10 +24,10 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjhbc"]
 shader = SubResource("Shader_c7ogs")
-shader_parameter/cutoff = 0.427
-shader_parameter/width = 0.054
-shader_parameter/height = 0.057
-shader_parameter/speed = 0.416
+shader_parameter/cutoff = 0.291
+shader_parameter/width = 0.043
+shader_parameter/height = 0.046
+shader_parameter/speed = 0.337
 
 [node name="Control" type="Control"]
 layout_mode = 3
