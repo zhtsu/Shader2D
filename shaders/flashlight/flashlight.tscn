@@ -1,29 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyfwyhi07tcvv"]
+[gd_scene load_steps=5 format=3 uid="uid://cyfwyhi07tcvv"]
 
 [ext_resource type="Shader" path="res://shaders/flashlight/flashlight.gdshader" id="1_880n5"]
 [ext_resource type="Script" path="res://shaders/flashlight/ColorRect.gd" id="2_e7prs"]
+[ext_resource type="Texture2D" uid="uid://dkm6lthga5wrf" path="res://shaders/flashlight/bj.jpg" id="2_hqjip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ajtqy"]
 shader = ExtResource("1_880n5")
+shader_parameter/scale = Vector2(1, 1)
 shader_parameter/open = true
 shader_parameter/radius = 200.0
 shader_parameter/mouse_pos = null
 
-[node name="Flashlight" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Flashlight" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ajtqy")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.556863, 0.298039, 1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_hqjip")
+centered = false
 script = ExtResource("2_e7prs")
