@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://hby30kb47a17"]
+
+[ext_resource type="Script" path="res://app/slot.gd" id="1_pks8x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_auwah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtjcj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_371ms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxagt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tbruo"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqvn7"]
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[node name="Slot" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(80, 80)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_auwah")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mtjcj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_371ms")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dxagt")
+text = "Title"
+icon = SubResource("ViewportTexture_tbruo")
+icon_alignment = 1
+script = ExtResource("1_pks8x")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(80, 80)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqvn7")
+
+[node name="HoverMask" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

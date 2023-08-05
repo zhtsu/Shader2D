@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyfwyhi07tcvv"]
 
 [ext_resource type="Shader" path="res://shaders/flashlight/flashlight.gdshader" id="1_880n5"]
-[ext_resource type="Script" path="res://shaders/flashlight/ColorRect.gd" id="2_e7prs"]
 [ext_resource type="Texture2D" uid="uid://dkm6lthga5wrf" path="res://shaders/flashlight/bj.jpg" id="2_hqjip"]
+[ext_resource type="Script" path="res://shaders/flashlight/sprite2d.gd" id="3_qqfqk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ajtqy"]
 shader = ExtResource("1_880n5")
@@ -18,4 +18,4 @@ material = SubResource("ShaderMaterial_ajtqy")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_hqjip")
 centered = false
-script = ExtResource("2_e7prs")
+script = ExtResource("3_qqfqk")

@@ -1,0 +1,154 @@
+[gd_scene load_steps=12 format=3 uid="uid://yixd7nu6iulp"]
+
+[ext_resource type="Script" path="res://app/main.gd" id="1_ws21p"]
+[ext_resource type="Texture2D" uid="uid://b5dh83rd4t1xe" path="res://icon.png" id="2_qpyjc"]
+[ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_seqbx"]
+[ext_resource type="Texture2D" uid="uid://cy46pkf7y5w68" path="res://assets/icon_github.png" id="3_o2ehb"]
+[ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shaders/wave/wave.tscn" id="5_mhopw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uekt0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kys5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhttl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_co6pq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m5bm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h0t8m"]
+viewport_path = NodePath("VBoxContainer/ContentBox/ViewportBox/SubViewport")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ws21p")
+
+[node name="BgColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GroupButton" type="Button" parent="VBoxContainer/TopBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uekt0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kys5q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhttl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_co6pq")
+icon = ExtResource("2_seqbx")
+
+[node name="Logo" type="Control" parent="VBoxContainer/TopBox"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TopBox/Logo"]
+layout_mode = 2
+offset_right = 320.0
+offset_bottom = 320.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qpyjc")
+
+[node name="GithubButton" type="Button" parent="VBoxContainer/TopBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uekt0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kys5q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhttl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_co6pq")
+icon = ExtResource("3_o2ehb")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ContentBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftBox" type="VBoxContainer" parent="VBoxContainer/ContentBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridBox" type="HBoxContainer" parent="VBoxContainer/ContentBox/LeftBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ContentBox/LeftBox/GridBox"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4m5bm")
+
+[node name="Grid" type="GridContainer" parent="VBoxContainer/ContentBox/LeftBox/GridBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/ContentBox/LeftBox/GridBox"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4m5bm")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ContentBox/LeftBox"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="NotSupported" type="Label" parent="VBoxContainer/ContentBox/LeftBox"]
+layout_mode = 2
+text = "Shader not supported: Flashlight"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ContentBox"]
+layout_mode = 2
+
+[node name="RightBox" type="VBoxContainer" parent="VBoxContainer/ContentBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CurrentShader" type="Label" parent="VBoxContainer/ContentBox/RightBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Wave"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ContentBox/RightBox"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("ViewportTexture_h0t8m")
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/ContentBox/RightBox"]
+size = Vector2i(480, 270)
+
+[node name="Wave" parent="VBoxContainer/ContentBox/RightBox/SubViewport" instance=ExtResource("5_mhopw")]
+
+[connection signal="pressed" from="VBoxContainer/TopBox/GroupButton" to="." method="_on_group_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopBox/GithubButton" to="." method="_on_github_button_pressed"]
