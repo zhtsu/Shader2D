@@ -20,7 +20,7 @@ func _ready() -> void:
 	# Flashlight
 	var flashlight_slot = slot_scene_res.instantiate()
 	flashlight_slot.init_slot_data(null, "Flashlight")
-	flashlight_slot.disabled = true
+	flashlight_slot.disable()
 	slot_list.append(flashlight_slot)
 	# Add to Grid from list
 	for slot in slot_list:

@@ -4,17 +4,27 @@ extends Button
 signal clicked
 
 
-func init_slot_data(scene : Node, title : String) -> void:
-	$SubViewport.add_child(scene)
-	text = title
-
-
-func _on_mouse_entered() -> void:
+func disable() -> void:
+	disabled = true
+	mouse_filter = MOUSE_FILTER_IGNORE
 	$HoverMask.color = Color.from_hsv(0, 0, 0, 0.4)
 
 
+func init_slot_data(scene : Node, title : String) -> void:
+	text = title
+	
+	if scene == null:
+		return
+		
+	$SubViewport.add_child(scene)
+
+
+func _on_mouse_entered() -> void:
+	$HoverMask.color = Color.from_hsv(0, 0, 1, 0.4)
+
+
 func _on_mouse_exited() -> void:
-	$HoverMask.color = Color.from_hsv(0, 0, 0, 0)
+	$HoverMask.color = Color.from_hsv(0, 0, 1, 0)
 
 
 func _on_button_down() -> void:

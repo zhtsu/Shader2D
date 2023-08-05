@@ -11,7 +11,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxagt"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tbruo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_erpwe"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqvn7"]
@@ -33,7 +33,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mtjcj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_371ms")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dxagt")
 text = "Title"
-icon = SubResource("ViewportTexture_tbruo")
+icon = SubResource("ViewportTexture_erpwe")
 icon_alignment = 1
 script = ExtResource("1_pks8x")
 
