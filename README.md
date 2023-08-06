@@ -1,6 +1,6 @@
-# ShadersFor2D
+# Shader2D
 
-Shaders for 2D completed in Godot
+2D Shader in Godot
 
 | NAME | SCREENSHOT                     | NAME       | SCREENSHOT                       |
 |:----:| ------------------------------ |:----------:|:--------------------------------:|
