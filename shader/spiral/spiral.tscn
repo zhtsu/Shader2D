@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmmt46wdox0o8"]
+
+[ext_resource type="Shader" path="res://shader/spiral/spiral.gdshader" id="1_lq55o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk02v"]
+shader = ExtResource("1_lq55o")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_width = 0.2
+shader_parameter/line_distance = 0.5
+shader_parameter/line_blur = 0.1
+
+[node name="Spiral" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wk02v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

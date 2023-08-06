@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://yixd7nu6iulp"]
 
 [ext_resource type="Script" path="res://app/main.gd" id="1_ws21p"]
-[ext_resource type="Texture2D" uid="uid://b5dh83rd4t1xe" path="res://icon.png" id="2_qpyjc"]
+[ext_resource type="Texture2D" uid="uid://dt20ac5v2tnfh" path="res://icon.png" id="2_qpyjc"]
 [ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_seqbx"]
 [ext_resource type="Texture2D" uid="uid://cy46pkf7y5w68" path="res://assets/icon_github.png" id="3_o2ehb"]
-[ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shaders/wave/wave.tscn" id="5_mhopw"]
+[ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shader/wave/wave.tscn" id="5_mhopw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uekt0"]
 

@@ -3,7 +3,8 @@ extends Control
 
 const slot_scene_res = preload("res://app/slot.tscn")
 # Scenes for display shader
-const wave_scene_res = preload("res://shaders/wave/wave.tscn")
+const wave_scene_res = preload("res://shader/wave/wave.tscn")
+const spiral_scene_res = preload("res://shader/spiral/spiral.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,11 @@ func _ready() -> void:
 	wave_slot.init_slot_data(wave_scene_res.instantiate(), "Wave")
 	wave_slot.connect("clicked", on_slot_clicked.bind(wave_scene_res.instantiate(), "Wave"))
 	slot_list.append(wave_slot)
+	# Spiral
+	var spiral_slot = slot_scene_res.instantiate()
+	spiral_slot.init_slot_data(spiral_scene_res.instantiate(), "Spiral")
+	spiral_slot.connect("clicked", on_slot_clicked.bind(spiral_scene_res.instantiate(), "Spiral"))
+	slot_list.append(spiral_slot)
 	# Flashlight
 	var flashlight_slot = slot_scene_res.instantiate()
 	flashlight_slot.init_slot_data(null, "Flashlight")

@@ -11,7 +11,7 @@ void fragment()
 	float alpha = 1.0;
 	float wave_cutoff = cutoff - (sin((UV.x + TIME * speed) / width) - 1.0) * height;
 	
-	if (wave_cutoff > UV.y)
+	if (UV.y < wave_cutoff)
 	{
 		alpha = 0.0;
 	}
