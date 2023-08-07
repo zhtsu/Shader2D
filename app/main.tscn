@@ -116,15 +116,6 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_4m5bm")
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ContentBox/LeftBox"]
-layout_mode = 2
-size_flags_vertical = 10
-
-[node name="NotSupported" type="Label" parent="VBoxContainer/ContentBox/LeftBox"]
-layout_mode = 2
-text = "Shader not supported: Flashlight"
-horizontal_alignment = 1
-
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/ContentBox"]
 layout_mode = 2
 

@@ -4,6 +4,7 @@ extends Control
 const slot_scene_res = preload("res://app/slot.tscn")
 # Scenes for display shader
 const wave_scene_res = preload("res://shader/wave/wave.tscn")
+const dissolve_scene_res = preload("res://shader/dissolve/dissolve.tscn")
 const spiral_scene_res = preload("res://shader/spiral/spiral.tscn")
 
 
@@ -18,16 +19,16 @@ func _ready() -> void:
 	wave_slot.init_slot_data(wave_scene_res.instantiate(), "Wave")
 	wave_slot.connect("clicked", on_slot_clicked.bind(wave_scene_res.instantiate(), "Wave"))
 	slot_list.append(wave_slot)
+	# Flashlight
+	var dissolve_slot = slot_scene_res.instantiate()
+	dissolve_slot.init_slot_data(dissolve_scene_res.instantiate(), "Dissolve")
+	dissolve_slot.connect("clicked", on_slot_clicked.bind(dissolve_scene_res.instantiate(), "Dissolve"))
+	slot_list.append(dissolve_slot)
 	# Spiral
 	var spiral_slot = slot_scene_res.instantiate()
 	spiral_slot.init_slot_data(spiral_scene_res.instantiate(), "Spiral")
 	spiral_slot.connect("clicked", on_slot_clicked.bind(spiral_scene_res.instantiate(), "Spiral"))
 	slot_list.append(spiral_slot)
-	# Flashlight
-	var flashlight_slot = slot_scene_res.instantiate()
-	flashlight_slot.init_slot_data(null, "Flashlight")
-	flashlight_slot.disable()
-	slot_list.append(flashlight_slot)
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
