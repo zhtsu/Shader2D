@@ -2,8 +2,8 @@
 
 2D Shader in Godot
 
-| NAME | SCREENSHOT                     | NAME       | SCREENSHOT                       |
-|:----:| ------------------------------ |:----------:|:--------------------------------:|
-| wave | ![wave](.screenshots/wave.png) | flashlight | ![](.screenshots/flashlight.png) |
-|      |                                |            |                                  |
-|      |                                |            |                                  |
+| NAME | SCREENSHOT                     | NAME | SCREENSHOT |
+|:----:| ------------------------------ |:----:|:----------:|
+| wave | ![wave](.screenshots/wave.png) |      |            |
+|      |                                |      |            |
+|      |                                |      |            |
