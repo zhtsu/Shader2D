@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://6snvtk16b7tc"]
 
-[ext_resource type="Shader" path="res://shader/wave/wave.gdshader" id="1_6hr3g"]
+[ext_resource type="Shader" path="res://shaders/wave/wave.gdshader" id="1_r15j7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vjhbc"]
-shader = ExtResource("1_6hr3g")
+shader = ExtResource("1_r15j7")
 shader_parameter/cutoff = 0.5
 shader_parameter/width = 0.045
 shader_parameter/height = 0.045

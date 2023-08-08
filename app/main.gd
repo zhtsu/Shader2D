@@ -3,9 +3,9 @@ extends Control
 
 const slot_scene_res = preload("res://app/slot.tscn")
 # Scenes for display shader
-const wave_scene_res = preload("res://shader/wave/wave.tscn")
-const dissolve_scene_res = preload("res://shader/dissolve/dissolve.tscn")
-const spiral_scene_res = preload("res://shader/spiral/spiral.tscn")
+const wave_scene_res = preload("res://shaders/wave/wave.tscn")
+const dissolve_scene_res = preload("res://shaders/dissolve/dissolve.tscn")
+const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,7 +46,7 @@ func on_slot_clicked(scene : Node, title : String) -> void:
 
 
 func _on_github_button_pressed() -> void:
-	OS.shell_open("https://github.com/zhtsu/ShadersFor2D/")
+	OS.shell_open("https://github.com/zhtsu/Shaders2D/")
 
 
 func _on_group_button_pressed() -> void:

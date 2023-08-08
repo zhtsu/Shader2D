@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmmt46wdox0o8"]
 
-[ext_resource type="Shader" path="res://shader/spiral/spiral.gdshader" id="1_lq55o"]
+[ext_resource type="Shader" path="res://shaders/spiral/spiral.gdshader" id="1_ws4d4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wk02v"]
-shader = ExtResource("1_lq55o")
+shader = ExtResource("1_ws4d4")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_width = 0.2
 shader_parameter/line_distance = 0.5
