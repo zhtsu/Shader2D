@@ -6,7 +6,7 @@ const slot_scene_res = preload("res://app/slot.tscn")
 const wave_scene_res = preload("res://shaders/wave/wave.tscn")
 const dissolve_scene_res = preload("res://shaders/dissolve/dissolve.tscn")
 const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
-
+const CRT_scene_res = preload("res://shaders/CRT/CRT.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _ready() -> void:
 	wave_slot.init_slot_data(wave_scene_res.instantiate(), "Wave")
 	wave_slot.connect("clicked", on_slot_clicked.bind(wave_scene_res.instantiate(), "Wave"))
 	slot_list.append(wave_slot)
-	# Flashlight
+	# Dissolve
 	var dissolve_slot = slot_scene_res.instantiate()
 	dissolve_slot.init_slot_data(dissolve_scene_res.instantiate(), "Dissolve")
 	dissolve_slot.connect("clicked", on_slot_clicked.bind(dissolve_scene_res.instantiate(), "Dissolve"))
@@ -29,6 +29,11 @@ func _ready() -> void:
 	spiral_slot.init_slot_data(spiral_scene_res.instantiate(), "Spiral")
 	spiral_slot.connect("clicked", on_slot_clicked.bind(spiral_scene_res.instantiate(), "Spiral"))
 	slot_list.append(spiral_slot)
+	# CRT
+	var CRT_slot = slot_scene_res.instantiate()
+	CRT_slot.init_slot_data(CRT_scene_res.instantiate(), "CRT")
+	CRT_slot.connect("clicked", on_slot_clicked.bind(CRT_scene_res.instantiate(), "CRT"))
+	slot_list.append(CRT_slot)
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
@@ -46,7 +51,7 @@ func on_slot_clicked(scene : Node, title : String) -> void:
 
 
 func _on_github_button_pressed() -> void:
-	OS.shell_open("https://github.com/zhtsu/Shaders2D/")
+	OS.shell_open("https://github.com/zhtsu/Shader2D/")
 
 
 func _on_group_button_pressed() -> void:

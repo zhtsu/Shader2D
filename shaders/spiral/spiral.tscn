@@ -1,13 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmmt46wdox0o8"]
+[gd_scene load_steps=4 format=3 uid="uid://cmmt46wdox0o8"]
 
+[ext_resource type="Texture2D" uid="uid://8drrl52vbr8t" path="res://assets/test.png" id="1_6ni2k"]
 [ext_resource type="Shader" path="res://shaders/spiral/spiral.gdshader" id="1_ws4d4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk02v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grdk0"]
 shader = ExtResource("1_ws4d4")
-shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_width = 0.2
 shader_parameter/line_distance = 0.5
-shader_parameter/line_blur = 0.1
 
 [node name="Spiral" type="Control"]
 layout_mode = 3
@@ -17,11 +16,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_wk02v")
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_grdk0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_6ni2k")
