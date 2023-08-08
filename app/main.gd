@@ -4,7 +4,7 @@ extends Control
 const slot_scene_res = preload("res://app/slot.tscn")
 # Scenes for display shader
 const wave_scene_res = preload("res://shaders/wave/wave.tscn")
-const dissolve_scene_res = preload("res://shaders/dissolve/dissolve.tscn")
+const show_scene_res = preload("res://shaders/show/show.tscn")
 const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
 const CRT_scene_res = preload("res://shaders/CRT/CRT.tscn")
 
@@ -19,11 +19,11 @@ func _ready() -> void:
 	wave_slot.init_slot_data(wave_scene_res.instantiate(), "Wave")
 	wave_slot.connect("clicked", on_slot_clicked.bind(wave_scene_res.instantiate(), "Wave"))
 	slot_list.append(wave_slot)
-	# Dissolve
-	var dissolve_slot = slot_scene_res.instantiate()
-	dissolve_slot.init_slot_data(dissolve_scene_res.instantiate(), "Dissolve")
-	dissolve_slot.connect("clicked", on_slot_clicked.bind(dissolve_scene_res.instantiate(), "Dissolve"))
-	slot_list.append(dissolve_slot)
+	# Show
+	var show_slot = slot_scene_res.instantiate()
+	show_slot.init_slot_data(show_scene_res.instantiate(), "Show")
+	show_slot.connect("clicked", on_slot_clicked.bind(show_scene_res.instantiate(), "Show"))
+	slot_list.append(show_slot)
 	# Spiral
 	var spiral_slot = slot_scene_res.instantiate()
 	spiral_slot.init_slot_data(spiral_scene_res.instantiate(), "Spiral")
