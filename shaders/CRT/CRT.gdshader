@@ -14,5 +14,5 @@ void fragment()
 	float vignetting = clamp(pow(cos(uv.x * PI), 1.2) * pow(cos(uv.y * PI), 1.2) * 50.0, 0.0, 1.0);
 	col *= vignetting;
 	
-    COLOR = vec4(col, 1.0);
+    COLOR = vec4(col, COLOR.a);
 }

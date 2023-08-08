@@ -11,5 +11,8 @@ void fragment()
 	vec2 uv = UV - 0.5;
 	float angle = atan(uv.x, uv.y);
 	float value = smoothstep(-0.1, 0.1, sin(angle * float(count) + TIME * speed));
-	COLOR = vec4(mix(color_1, color_2, value), 1.0);
+	
+	vec3 col = mix(color_1, color_2, value);
+	
+	COLOR = vec4(col, COLOR.a);
 }

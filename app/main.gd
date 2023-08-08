@@ -7,33 +7,30 @@ const wave_scene_res = preload("res://shaders/wave/wave.tscn")
 const show_scene_res = preload("res://shaders/show/show.tscn")
 const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
 const CRT_scene_res = preload("res://shaders/CRT/CRT.tscn")
+const gray_scene_res = preload("res://shaders/gray/gray.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
+func _create_slot(res : Resource, title : String) -> Node:
+	var slot = slot_scene_res.instantiate()
+	slot.init_slot_data(res.instantiate(), title)
+	slot.connect("clicked", on_slot_clicked.bind(res.instantiate(), title))
+	return slot
+
 func _ready() -> void:
 	# Viewport
 	$VBoxContainer/ContentBox/RightBox/TextureRect.texture = \
 		$VBoxContainer/ContentBox/RightBox/SubViewport.get_texture()
 	var slot_list = []
 	# Wave
-	var wave_slot = slot_scene_res.instantiate()
-	wave_slot.init_slot_data(wave_scene_res.instantiate(), "Wave")
-	wave_slot.connect("clicked", on_slot_clicked.bind(wave_scene_res.instantiate(), "Wave"))
-	slot_list.append(wave_slot)
+	slot_list.append(_create_slot(wave_scene_res, "Wave"))
 	# Show
-	var show_slot = slot_scene_res.instantiate()
-	show_slot.init_slot_data(show_scene_res.instantiate(), "Show")
-	show_slot.connect("clicked", on_slot_clicked.bind(show_scene_res.instantiate(), "Show"))
-	slot_list.append(show_slot)
+	slot_list.append(_create_slot(show_scene_res, "Show"))
 	# Spiral
-	var spiral_slot = slot_scene_res.instantiate()
-	spiral_slot.init_slot_data(spiral_scene_res.instantiate(), "Spiral")
-	spiral_slot.connect("clicked", on_slot_clicked.bind(spiral_scene_res.instantiate(), "Spiral"))
-	slot_list.append(spiral_slot)
+	slot_list.append(_create_slot(spiral_scene_res, "Spiral"))
 	# CRT
-	var CRT_slot = slot_scene_res.instantiate()
-	CRT_slot.init_slot_data(CRT_scene_res.instantiate(), "CRT")
-	CRT_slot.connect("clicked", on_slot_clicked.bind(CRT_scene_res.instantiate(), "CRT"))
-	slot_list.append(CRT_slot)
+	slot_list.append(_create_slot(CRT_scene_res, "CRT"))
+	# Gray
+	slot_list.append(_create_slot(gray_scene_res, "Gray"))
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)

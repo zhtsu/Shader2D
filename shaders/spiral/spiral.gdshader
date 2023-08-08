@@ -14,7 +14,7 @@ void fragment()
 	float offset = len + (angle / (PI * 2.0)) * line_distance;
 	float circles = mod(offset - TIME, line_distance);
 	
-	vec3 color = (1.0 - circles) * COLOR.rgb;
+	vec3 col = (1.0 - circles) * COLOR.rgb;
 	
-	COLOR = vec4(color, 1.0);
+	COLOR = vec4(col, COLOR.a);
 }
