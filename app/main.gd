@@ -9,7 +9,7 @@ const show_scene_res = preload("res://shaders/show/show.tscn")
 const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
 const CRT_scene_res = preload("res://shaders/CRT/CRT.tscn")
 const gray_scene_res = preload("res://shaders/gray/gray.tscn")
-const water_surface_scene_res = preload("res://shaders/water_surface/water_surface.tscn")
+const ripple_scene_res = preload("res://shaders/ripple/ripple.tscn")
 
 
 func _create_slot(res : Resource, title : String) -> Node:
@@ -34,8 +34,8 @@ func _ready() -> void:
 	slot_list.append(_create_slot(CRT_scene_res, "CRT"))
 	# Gray
 	slot_list.append(_create_slot(gray_scene_res, "Gray"))
-	# Water surface
-	slot_list.append(_create_slot(water_surface_scene_res, "Water\nSurface"))
+	# Ripple
+	slot_list.append(_create_slot(ripple_scene_res, "Ripple"))
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
