@@ -6,6 +6,7 @@
 shader = ExtResource("1_jmiqk")
 shader_parameter/color_1 = Color(0.96, 0.57, 0.15, 1)
 shader_parameter/color_2 = Color(1, 0.89, 0.41, 1)
+shader_parameter/count = 10
 shader_parameter/speed = 6.0
 
 [node name="Show" type="Control"]
