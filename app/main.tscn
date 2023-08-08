@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://yixd7nu6iulp"]
+[gd_scene load_steps=14 format=3 uid="uid://yixd7nu6iulp"]
 
 [ext_resource type="Script" path="res://app/main.gd" id="1_ws21p"]
 [ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_seqbx"]
@@ -36,9 +36,6 @@ grow_begin = 6.0
 grow_end = 0.0
 thickness = 6
 vertical = true
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_h0t8m"]
-viewport_path = NodePath("VBoxContainer/ContentBox/ViewportBox/SubViewport")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -157,7 +154,6 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("ViewportTexture_h0t8m")
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/ContentBox/RightBox"]
 size = Vector2i(480, 270)

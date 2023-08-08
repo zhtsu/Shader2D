@@ -9,6 +9,7 @@ const show_scene_res = preload("res://shaders/show/show.tscn")
 const spiral_scene_res = preload("res://shaders/spiral/spiral.tscn")
 const CRT_scene_res = preload("res://shaders/CRT/CRT.tscn")
 const gray_scene_res = preload("res://shaders/gray/gray.tscn")
+const water_surface_scene_res = preload("res://shaders/water_surface/water_surface.tscn")
 
 
 func _create_slot(res : Resource, title : String) -> Node:
@@ -21,6 +22,7 @@ func _ready() -> void:
 	# Viewport
 	$VBoxContainer/ContentBox/RightBox/TextureRect.texture = \
 		$VBoxContainer/ContentBox/RightBox/SubViewport.get_texture()
+	
 	var slot_list = []
 	# Wave
 	slot_list.append(_create_slot(wave_scene_res, "Wave"))
@@ -32,6 +34,8 @@ func _ready() -> void:
 	slot_list.append(_create_slot(CRT_scene_res, "CRT"))
 	# Gray
 	slot_list.append(_create_slot(gray_scene_res, "Gray"))
+	# Water surface
+	slot_list.append(_create_slot(water_surface_scene_res, "Water\nSurface"))
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
@@ -45,6 +49,8 @@ func on_slot_clicked(scene : Node, title : String) -> void:
 	for child in $VBoxContainer/ContentBox/RightBox/SubViewport.get_children():
 		$VBoxContainer/ContentBox/RightBox/SubViewport.remove_child(child)
 	$VBoxContainer/ContentBox/RightBox/SubViewport.add_child(scene)
+	
+	title = title.replace("\n", " ")
 	$VBoxContainer/ContentBox/RightBox/CurrentShader.text = title
 
 
