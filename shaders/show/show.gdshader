@@ -3,7 +3,7 @@ render_mode unshaded;
 
 uniform vec3 color_1 : source_color = vec3(0.96, 0.57, 0.15);
 uniform vec3 color_2 : source_color = vec3(1.0, 0.89, 0.41);
-uniform int count : hint_range(1, 10) = 10;
+uniform int count : hint_range(1, 20) = 10;
 uniform float speed : hint_range(1.0, 10.0) = 6.0;
 
 void fragment()

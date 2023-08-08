@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://yixd7nu6iulp"]
+[gd_scene load_steps=15 format=3 uid="uid://yixd7nu6iulp"]
 
 [ext_resource type="Script" path="res://app/main.gd" id="1_ws21p"]
-[ext_resource type="Texture2D" uid="uid://dt20ac5v2tnfh" path="res://icon.png" id="2_qpyjc"]
 [ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_seqbx"]
+[ext_resource type="Texture2D" uid="uid://br71ullc8p1wa" path="res://assets/logo.png" id="3_6lonv"]
 [ext_resource type="Texture2D" uid="uid://cy46pkf7y5w68" path="res://assets/icon_github.png" id="3_o2ehb"]
 [ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shaders/wave/wave.tscn" id="5_mhopw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhktl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uekt0"]
 
@@ -14,7 +22,20 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_co6pq"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_c8wub"]
+color = Color(1, 1, 1, 1)
+grow_begin = -4.0
+grow_end = -4.0
+thickness = 6
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m5bm"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7p1lk"]
+color = Color(1, 1, 1, 1)
+grow_begin = 6.0
+grow_end = 0.0
+thickness = 6
+vertical = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_h0t8m"]
 viewport_path = NodePath("VBoxContainer/ContentBox/ViewportBox/SubViewport")
@@ -28,14 +49,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ws21p")
 
-[node name="BgColor" type="ColorRect" parent="."]
+[node name="BgColor" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhktl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -69,7 +90,7 @@ layout_mode = 2
 offset_right = 320.0
 offset_bottom = 320.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_qpyjc")
+texture = ExtResource("3_6lonv")
 
 [node name="GithubButton" type="Button" parent="VBoxContainer/TopBox"]
 custom_minimum_size = Vector2(64, 64)
@@ -83,8 +104,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_co6pq")
 icon = ExtResource("3_o2ehb")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_c8wub")
 
 [node name="ContentBox" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -107,8 +129,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_4m5bm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 6
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/ContentBox/LeftBox/GridBox"]
@@ -118,6 +140,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_4m5bm")
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/ContentBox"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7p1lk")
 
 [node name="RightBox" type="VBoxContainer" parent="VBoxContainer/ContentBox"]
 layout_mode = 2

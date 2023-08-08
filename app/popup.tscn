@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://drw8o5rh4u5j3"]
+
+[ext_resource type="Script" path="res://app/popup.gd" id="1_1wk8f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivspj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xrrd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21f2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_177k6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jcbj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_igjr8"]
+
+[node name="Popup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1wk8f")
+
+[node name="Mask" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ivspj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBox" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Text" type="Label" parent="Panel/VBoxContainer/TextBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Message"
+horizontal_alignment = 1
+
+[node name="BtnBar" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator3" type="VSeparator" parent="Panel/VBoxContainer/BtnBar"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7xrrd")
+
+[node name="YesBtn" type="Button" parent="Panel/VBoxContainer/BtnBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_j21f2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_177k6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_igjr8")
+text = "Yes"
+
+[node name="NoBtn" type="Button" parent="Panel/VBoxContainer/BtnBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_j21f2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_177k6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_igjr8")
+text = "No"
+
+[node name="HSeparator2" type="VSeparator" parent="Panel/VBoxContainer/BtnBar"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7xrrd")
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7xrrd")
+
+[connection signal="pressed" from="Panel/VBoxContainer/BtnBar/NoBtn" to="." method="_on_no_btn_pressed"]

@@ -1,6 +1,7 @@
 extends Control
 
-
+# Popup
+const popup_scene_res = preload("res://app/popup.tscn")
 const slot_scene_res = preload("res://app/slot.tscn")
 # Scenes for display shader
 const wave_scene_res = preload("res://shaders/wave/wave.tscn")
@@ -47,12 +48,20 @@ func on_slot_clicked(scene : Node, title : String) -> void:
 	$VBoxContainer/ContentBox/RightBox/CurrentShader.text = title
 
 
-func _on_github_button_pressed() -> void:
+func _link_to_github_repository() -> void:
 	OS.shell_open("https://github.com/zhtsu/Shader2D/")
 
+func _on_github_button_pressed() -> void:
+	var popup_scene = popup_scene_res.instantiate()
+	popup_scene.init_popup("Link to github repository ?", _link_to_github_repository)
+	add_child(popup_scene)
+	
+
+func _link_to_qq_group_QR_code() -> void:
+	OS.shell_open("http://file.zhtsu.cc/qq_group_1065732551_QR_code.jpg")
 
 func _on_group_button_pressed() -> void:
-	OS.shell_open("http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=f\
-		A4XSaxBebMykh6cbchOgHH4rfscFAVD&authKey=VgwdS%2BW2FaDj\
-		21IpcEEc9lOZAWgLyYy7r9%2FxbQtzniiSmAKCZjScFIzULlU7zwD7\
-		&noverify=0&group_code=1065732551")
+	var popup_scene = popup_scene_res.instantiate()
+	popup_scene.init_popup("Do you want to join\nthe QQ group ?", _link_to_qq_group_QR_code)
+	add_child(popup_scene)
+	
