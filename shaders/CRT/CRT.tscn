@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://l12w4p4mmf8x"]
 
-[ext_resource type="Texture2D" uid="uid://8drrl52vbr8t" path="res://assets/test.png" id="1_etpch"]
-[ext_resource type="Shader" path="res://shaders/CRT/CRT.gdshader" id="1_m4028"]
+[ext_resource type="Shader" path="res://shaders/crt/crt.gdshader" id="1_uq2tf"]
+[ext_resource type="Texture2D" uid="uid://8drrl52vbr8t" path="res://assets/test.png" id="2_gjm08"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td1x3"]
-shader = ExtResource("1_m4028")
+shader = ExtResource("1_uq2tf")
 
 [node name="CRT" type="Control"]
 layout_mode = 3
@@ -22,4 +22,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_etpch")
+texture = ExtResource("2_gjm08")

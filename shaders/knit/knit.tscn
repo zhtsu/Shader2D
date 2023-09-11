@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://byuhpmmfoy7er"]
+
+[ext_resource type="Shader" path="res://shaders/knit/knit.gdshader" id="1_f05fm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c77og"]
+shader = ExtResource("1_f05fm")
+shader_parameter/output_color = Color(0.09, 0.42, 0.53, 1)
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/density = 0.02
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_452al"]
+
+[node name="Knit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_c77og")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_452al")
