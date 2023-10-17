@@ -12,6 +12,7 @@ const tscn_gray = preload("res://shaders/gray/gray.tscn")
 const tscn_ripple = preload("res://shaders/ripple/ripple.tscn")
 const tscn_knit = preload("res://shaders/knit/knit.tscn")
 const tscn_bar_transition = preload("res://shaders/bar_transition/bar_transition.tscn")
+const tscn_black_and_white = preload("res://shaders/B&W/B&W.tscn")
 
 
 func _create_slot(res : Resource, title : String) -> Node:
@@ -42,6 +43,8 @@ func _ready() -> void:
 	slot_list.append(_create_slot(tscn_knit, "Knit"))
 	# Bar Transition
 	slot_list.append(_create_slot(tscn_bar_transition, "Bar\nTransition"))
+	# B&W
+	slot_list.append(_create_slot(tscn_black_and_white, "B&W"))
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
@@ -63,17 +66,18 @@ func on_slot_clicked(scene : Node, title : String) -> void:
 func _link_to_github_repository() -> void:
 	OS.shell_open("https://github.com/zhtsu/Shader2D/")
 
+
 func _on_github_button_pressed() -> void:
 	var popup_scene = tscn_popup.instantiate()
 	popup_scene.init_popup("Link to github repository ?", _link_to_github_repository)
 	add_child(popup_scene)
 	
 
-func _link_to_qq_group_QR_code() -> void:
-	OS.shell_open("http://file.zhtsu.cc/qq_group_1065732551_QR_code.jpg")
+func _nothing() -> void:
+	pass
 
 func _on_group_button_pressed() -> void:
 	var popup_scene = tscn_popup.instantiate()
-	popup_scene.init_popup("Do you want to join\nthe QQ group ?", _link_to_qq_group_QR_code)
+	popup_scene.init_popup("Nothing now", popup_scene.destroy)
 	add_child(popup_scene)
 	
