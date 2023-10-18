@@ -26,6 +26,6 @@
 
 ## App
 
-You can quickly check all the shaders in this little app. 
+You can quickly check all the shaders in this little app
 
  ![app](.screenshots/app.png)
