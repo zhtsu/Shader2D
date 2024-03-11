@@ -15,20 +15,20 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21f2"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_177k6"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jcbj"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_177k6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_igjr8"]
@@ -52,17 +52,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(256, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ivspj")
@@ -101,8 +101,8 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_j21f2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_177k6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_177k6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_igjr8")
 text = "Yes"
 
@@ -114,8 +114,8 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_j21f2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_177k6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8jcbj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_177k6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_igjr8")
 text = "No"
 
