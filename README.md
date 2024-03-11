@@ -14,7 +14,7 @@
 | spiral | ![wave](.screenshots/spiral.png) | ripple | ![wave](.screenshots/ripple.png) | knit | ![knit](.screenshots/knit.png) | bar transition | ![knit](.screenshots/bar_transition.png) |
 | B&W | ![wave](.screenshots/B&W.png) |        |                                         |      |                               |      |                                |
 
-## App
-You can quickly check all the shaders in this little app
+## Executable
+You can quickly check all the shaders by running this project
 
-![app](.screenshots/app.png)
+![app](.screenshots/viewer.png)
