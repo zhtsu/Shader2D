@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://yixd7nu6iulp"]
+[gd_scene load_steps=14 format=3 uid="uid://bxvwssjj42v2u"]
 
-[ext_resource type="Script" path="res://app/main.gd" id="1_ws21p"]
-[ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_seqbx"]
-[ext_resource type="Texture2D" uid="uid://br71ullc8p1wa" path="res://assets/logo.png" id="3_6lonv"]
-[ext_resource type="Texture2D" uid="uid://cy46pkf7y5w68" path="res://assets/icon_github.png" id="3_o2ehb"]
-[ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shaders/wave/wave.tscn" id="5_mhopw"]
+[ext_resource type="Script" path="res://viewer/main.gd" id="1_wfop4"]
+[ext_resource type="Texture2D" uid="uid://cxort6e7i4fs2" path="res://assets/icon_group.png" id="2_4pegh"]
+[ext_resource type="Texture2D" uid="uid://br71ullc8p1wa" path="res://assets/logo.png" id="3_el5fh"]
+[ext_resource type="Texture2D" uid="uid://cy46pkf7y5w68" path="res://assets/icon_github.png" id="4_3fv6f"]
+[ext_resource type="PackedScene" uid="uid://6snvtk16b7tc" path="res://shaders/wave/wave.tscn" id="5_ejfd8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhktl"]
 bg_color = Color(0, 0, 0, 1)
@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ws21p")
+script = ExtResource("1_wfop4")
 
 [node name="BgColor" type="Panel" parent="."]
 layout_mode = 1
@@ -75,7 +75,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_uekt0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kys5q")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhttl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_co6pq")
-icon = ExtResource("2_seqbx")
+icon = ExtResource("2_4pegh")
 
 [node name="Logo" type="Control" parent="VBoxContainer/TopBox"]
 custom_minimum_size = Vector2(160, 160)
@@ -87,7 +87,7 @@ layout_mode = 2
 offset_right = 320.0
 offset_bottom = 320.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_6lonv")
+texture = ExtResource("3_el5fh")
 
 [node name="GithubButton" type="Button" parent="VBoxContainer/TopBox"]
 custom_minimum_size = Vector2(64, 64)
@@ -98,7 +98,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_uekt0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kys5q")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhttl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_co6pq")
-icon = ExtResource("3_o2ehb")
+icon = ExtResource("4_3fv6f")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
@@ -158,7 +158,7 @@ size_flags_vertical = 4
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/ContentBox/RightBox"]
 size = Vector2i(480, 270)
 
-[node name="Wave" parent="VBoxContainer/ContentBox/RightBox/SubViewport" instance=ExtResource("5_mhopw")]
+[node name="Wave" parent="VBoxContainer/ContentBox/RightBox/SubViewport" instance=ExtResource("5_ejfd8")]
 
 [connection signal="pressed" from="VBoxContainer/TopBox/GroupButton" to="." method="_on_group_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopBox/GithubButton" to="." method="_on_github_button_pressed"]

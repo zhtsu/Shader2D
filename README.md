@@ -17,4 +17,4 @@
 ## Executable
 You can quickly check all the shaders by running this project
 
-![app](.screenshots/viewer.png)
+![viewer](.screenshots/viewer.png)

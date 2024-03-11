@@ -1,13 +1,13 @@
 extends Control
 
 # Popup
-const tscn_popup = preload("res://app/popup.tscn")
-const tscn_slot = preload("res://app/slot.tscn")
+const tscn_popup = preload("res://viewer/popup.tscn")
+const tscn_slot = preload("res://viewer/slot.tscn")
 # Scenes for display shader
 const tscn_wave = preload("res://shaders/wave/wave.tscn")
 const tscn_show = preload("res://shaders/show/show.tscn")
 const tscn_spiral = preload("res://shaders/spiral/spiral.tscn")
-const tscn_crt = preload("res://shaders/crt/crt.tscn")
+const tscn_crt = preload("res://shaders/CRT/CRT.tscn")
 const tscn_gray = preload("res://shaders/gray/gray.tscn")
 const tscn_ripple = preload("res://shaders/ripple/ripple.tscn")
 const tscn_knit = preload("res://shaders/knit/knit.tscn")
