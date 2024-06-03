@@ -13,6 +13,9 @@ const tscn_ripple = preload("res://shaders/ripple/ripple.tscn")
 const tscn_knit = preload("res://shaders/knit/knit.tscn")
 const tscn_bar_transition = preload("res://shaders/bar_transition/bar_transition.tscn")
 const tscn_black_and_white = preload("res://shaders/B&W/B&W.tscn")
+const tscn_pixelate = preload("res://shaders/pixelate/pixelate.tscn")
+const tscn_swirl = preload("res://shaders/swirl/swirl.tscn")
+const tscn_grid = preload("res://shaders/grid/grid.tscn")
 
 
 func _create_slot(res : Resource, title : String) -> Node:
@@ -27,24 +30,18 @@ func _ready() -> void:
 		$VBoxContainer/ContentBox/RightBox/SubViewport.get_texture()
 	
 	var slot_list = []
-	# Wave
 	slot_list.append(_create_slot(tscn_wave, "Wave"))
-	# Show
 	slot_list.append(_create_slot(tscn_show, "Show"))
-	# Spiral
 	slot_list.append(_create_slot(tscn_spiral, "Spiral"))
-	# CRT
 	slot_list.append(_create_slot(tscn_crt, "CRT"))
-	# Gray
 	slot_list.append(_create_slot(tscn_gray, "Gray"))
-	# Ripple
 	slot_list.append(_create_slot(tscn_ripple, "Ripple"))
-	# Knit
 	slot_list.append(_create_slot(tscn_knit, "Knit"))
-	# Bar Transition
 	slot_list.append(_create_slot(tscn_bar_transition, "Bar\nTransition"))
-	# B&W
 	slot_list.append(_create_slot(tscn_black_and_white, "B&W"))
+	slot_list.append(_create_slot(tscn_pixelate, "Pixelate"))
+	slot_list.append(_create_slot(tscn_swirl, "Swirl"))
+	slot_list.append(_create_slot(tscn_grid, "Grid"))
 	# Add to Grid from list
 	for slot in slot_list:
 		$VBoxContainer/ContentBox/LeftBox/GridBox/Grid.add_child(slot)
