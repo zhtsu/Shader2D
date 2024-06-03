@@ -15,8 +15,8 @@ All shaders are gdshader-only files
 
 | NAME   | SCREENSHOT                       | NAME     | SCREENSHOT                         | NAME  | SCREENSHOT                      | NAME           | SCREENSHOT                               |
 |:------:| -------------------------------- |:--------:|:----------------------------------:|:-----:|:-------------------------------:|:--------------:|:----------------------------------------:|
-| wave   | ![wave](.screenshots/wave.png)   | show     | ![wave](.screenshots/show.png)     | CRT   | ![wave](.screenshots/CRT.png)   | gray           | ![wave](.screenshots/gray.png)           |
-| spiral | ![wave](.screenshots/spiral.png) | ripple   | ![wave](.screenshots/ripple.png)   | knit  | ![knit](.screenshots/knit.png)  | bar transition | ![knit](.screenshots/bar_transition.png) |
+| Wave   | ![wave](.screenshots/wave.png)   | Show     | ![wave](.screenshots/show.png)     | CRT   | ![wave](.screenshots/CRT.png)   | Gray           | ![wave](.screenshots/gray.png)           |
+| Spiral | ![wave](.screenshots/spiral.png) | Ripple   | ![wave](.screenshots/ripple.png)   | Knit  | ![knit](.screenshots/knit.png)  | Bar transition | ![knit](.screenshots/bar_transition.png) |
 | B&W    | ![wave](.screenshots/B&W.png)    | Pixelate | ![wave](.screenshots/pixelate.png) | Swirl | ![wave](.screenshots/swirl.png) | Grid           | ![wave](.screenshots/grid.png)           |
 
 ## Executable
